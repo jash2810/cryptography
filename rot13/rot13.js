@@ -12,12 +12,7 @@ fs.readFile('test.txt', (err, data) => {
     var key = 13
 
     for (let i = 0; i < alpha.length; i++) {
-        
-        if (i+key <= 25) {
-            alphaC += alpha[i+key]
-        } else {
-            alphaC += alpha[i-key]
-        }
+        alphaC += alpha[(i+key)%26]
     }
     var AlphaC = alphaC.toUpperCase()
 
